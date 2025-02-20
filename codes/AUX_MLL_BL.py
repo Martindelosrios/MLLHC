@@ -831,7 +831,7 @@ def BL_test_fsolve(D_or_E, B_data, S_data, B_expected, S_expected, num_pseudo, n
 # SIGNIFICANCE, AZIMOV DATASET #
 ################################
 
-def MLL_test_fast(D_or_E, pB_B_data, pS_B_data, pB_S_data, pS_S_data, B_expected, S_expected, num_pseudo):
+def MLL_test_fast(D_or_E, pB_B_data, pS_B_data, pB_S_data, pS_S_data, B_expected, S_expected, num_pseudo, pred_XG_SM,pred_XG_NP):
 
 	# FIND THE SIGNIFICANCE WITH MLL USING THE TEST STATISTIC FORMALISM (gives statistical error) 
 	# Inputs:
