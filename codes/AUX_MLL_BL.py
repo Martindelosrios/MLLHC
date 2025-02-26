@@ -28,6 +28,12 @@ from scipy.optimize import fsolve
 from xgboost import XGBRegressor, XGBClassifier
 
 
+def equation(mu, pb_ps, S, B):
+    return np.sum(1 / (mu * S + B * pb_ps)) - 1
+
+def find_mu(pb_ps, S, B, mu_guess=1.0):
+    mu_solution = fsolve(equation, mu_guess, args=(pb_ps, S, B))
+    return mu_solution[0]
 
 #####################
 # BINARY CLASSIFIER #
