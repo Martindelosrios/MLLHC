@@ -1002,6 +1002,8 @@ def MLL_test_fast(D_or_E, pB_B_data, pS_B_data, pB_S_data, pS_S_data, B_expected
                 prob_x_given_S = np.concatenate([pS_B_data_shuf,pS_S_data_shuf])
     
                 pb_ps_exp = np.concatenate([pb_ps_B_data, pb_ps_S_data])
+                maxval = np.max(prob_x_given_B / prob_x_given_S)
+                pb_ps_exp[np.where(pb_ps_exp > maxval)[0]] = maxval
                 mu = find_mu(pb_ps_exp, S_expected, B_expected)
                 if mu < 0: mu = 0
                 if mu > 2: mu = 2
